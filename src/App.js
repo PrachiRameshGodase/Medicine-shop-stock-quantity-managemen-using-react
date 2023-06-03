@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// import React,{useState} from 'react';
+import "./App.css"
+// import MedicineForm from "./components/Medicines/MedicineForm";
+// import Medicinelist from './components/Medicines/Medicinelist';
+import Header from './components/Layout/Header';
+import Medicine from "./components/Medicines/Medicine";
+import Cart from "./components/Cart/Cart"
 
-function App() {
+const App=() =>{
+  // const [medicineData,setMedicineData]=useState([]);
+
+  // const addMedicineHandler=(medicineName,description,price,quantity)=>{
+  //   setMedicineData((prevMedicine)=>{
+  //     return [...prevMedicine,{id:Math.random().toString(),name:medicineName,description:description,price:price,quantity:quantity}]
+  //   })
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Cart/>
+      <Header/>
+      <main>
+      <Medicine/>
+      </main>
     </div>
   );
 }
