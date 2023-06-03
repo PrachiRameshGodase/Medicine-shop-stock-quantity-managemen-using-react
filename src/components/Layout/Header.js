@@ -5,14 +5,14 @@ import medicineImage from "../../assets/medicine.jpg"
 
 
 
-const Header=() =>{
+const Header=(props) =>{
 
     
   return (
     <div>
       <header className={classes.header}>
         <h1>Medical Dashboard</h1>
-        <HeaderCartButton/>
+        <HeaderCartButton onClick={props.onShowCart}/>
         <h3>.</h3>
     </header>
     <div className={classes["main-image"]}>

@@ -1,27 +1,27 @@
-// import React,{useState} from 'react';
-import "./App.css"
-// import MedicineForm from "./components/Medicines/MedicineForm";
-// import Medicinelist from './components/Medicines/Medicinelist';
+import React,{Fragment,useState} from 'react';
+import "./App.css";
 import Header from './components/Layout/Header';
 import Medicine from "./components/Medicines/Medicine";
 import Cart from "./components/Cart/Cart"
 
 const App=() =>{
-  // const [medicineData,setMedicineData]=useState([]);
+  const [cartIsShown, setCartIsShown]=useState(false);
 
-  // const addMedicineHandler=(medicineName,description,price,quantity)=>{
-  //   setMedicineData((prevMedicine)=>{
-  //     return [...prevMedicine,{id:Math.random().toString(),name:medicineName,description:description,price:price,quantity:quantity}]
-  //   })
-  // }
+  const showCartHandler=()=>{
+    setCartIsShown(true);
+  }
+
+  const hideCartHandler=()=>{
+    setCartIsShown(false)
+  }
   return (
-    <div>
-      <Cart/>
-      <Header/>
+    <Fragment>
+      {cartIsShown && <Cart onClose={hideCartHandler}/>}
+      <Header onShowCart={showCartHandler}/>
       <main>
       <Medicine/>
       </main>
-    </div>
+    </Fragment>
   );
 }
 
