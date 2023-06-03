@@ -20,7 +20,7 @@ const AvailableMedicines=(props)=>{
             id={medicine.id}
             name={medicine.name} 
             description={medicine.description}
-            price={medicine.price}
+            price={parseFloat(medicine.price)}
             quantity={medicine.quantity} />
         ))}
      

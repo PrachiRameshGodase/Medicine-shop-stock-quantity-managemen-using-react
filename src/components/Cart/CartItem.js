@@ -1,7 +1,7 @@
 import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
-const price = `$${props.price.toFixed(2)}`;
+  const price = `$${typeof props.price === 'number' ? props.price.toFixed(2) : '0.00'}`;
 
   return (
     <li className={classes['cart-item']}>
