@@ -3,7 +3,7 @@ import "./App.css";
 import Header from './components/Layout/Header';
 import Medicine from "./components/Medicines/Medicine";
 import Cart from "./components/Cart/Cart";
-import CartProvider from "./store/CartProvider"
+import CartProvider from "./store/CardProvider"
 
 const App=() =>{
   const [cartIsShown, setCartIsShown]=useState(false);

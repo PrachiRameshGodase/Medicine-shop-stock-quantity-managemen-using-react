@@ -19,7 +19,7 @@ const AvailableMedicines=(props)=>{
             <MedicineItem key={medicine.id} 
             id={medicine.id}
             name={medicine.name} 
-             description={medicine.description}
+            description={medicine.description}
             price={medicine.price}
             quantity={medicine.quantity} />
         ))}
