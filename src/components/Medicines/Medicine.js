@@ -1,21 +1,44 @@
-import React,{useState} from 'react'
-import AvailableMedicines from './AvailableMedicines'
+
+import React, { useState } from 'react';
+import AvailableMedicines from './AvailableMedicines';
 import MedicineForm from './MedicineForm';
 
-const Medicine=() =>{
-const [medicineData,setMedicineData]=useState([]);
 
-const addMedicineHandler=(medicineName,description,price,quantity)=>{
-setMedicineData((prevMedicine)=>{
-    return [...prevMedicine,{id:Math.random().toString(),name:medicineName,description:description,price:price,quantity:quantity}]
-})
-  }
+const Medicine = () => {
+  const [medicineData, setMedicineData] = useState([]);
+
+  const addMedicineHandler = (medicineName, description, price, quantity) => {
+    const newMedicine = {
+      id: Math.random().toString(),
+      name: medicineName,
+      description: description,
+      price: price,
+      quantity: quantity,
+    };
+
+    const updatedMedicineData = [...medicineData, newMedicine];
+    setMedicineData(updatedMedicineData);
+  };
+
+  const updateMedicineHandler = (updatedMedicines) => {
+    setMedicineData(updatedMedicines);
+  };
+
   return (
     <div>
-    <MedicineForm onAddMedicne={addMedicineHandler} />
-    <AvailableMedicines items={medicineData} />
-    </div>
-  )
-}
+     
+     <MedicineForm onAddMedicine={addMedicineHandler} />
 
-export default Medicine
+      <AvailableMedicines
+        items={medicineData}
+        onUpdateMedicines={updateMedicineHandler}
+
+      />
+      
+    </div>
+  );
+};
+
+export default Medicine;
+
+

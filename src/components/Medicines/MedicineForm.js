@@ -28,17 +28,19 @@ const MedicineForm=(props) =>{
     const submitHandler=(event)=>{
         event.preventDefault();
 
-        const enentereData={
+        const enteredData={
             name:enteredMedicineName,
             description:enteredDescription,
             price:enteredPrice,
             quantity:enteredQuantity
         }
-        props.onAddMedicne(enentereData.name,enentereData.description,enentereData.price,enentereData.quantity);
+        props.onAddMedicine(enteredData.name, enteredData.description, enteredData.price, enteredData.quantity);
+
         setEnteredMedicineName("");
         setEnteredDescription("");
         setEnteredPrice("");
         setEnteredQuantity("")
+
     }
   return (
     <div className={classes.container}>

@@ -13,7 +13,7 @@ const HeaderCartButton=(props) =>{
   const btnClasses=`${classes.button} ${btnIsHighLighted ? classes.bump:""}`
 
   useEffect(()=>{
-    if(cartCtx.items.length===0){
+    if(items.length===0){
       return;
     }
     setbtnIsHighLighted(true);
